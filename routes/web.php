@@ -11,9 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 Route::get('/login', 'Auth\LoginController@redirectToProvider')->name('login');
 
 Route::get('loginfacebook', 'Auth\LoginController@redirectToProvider');
