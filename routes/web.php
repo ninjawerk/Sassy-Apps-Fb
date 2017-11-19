@@ -19,7 +19,6 @@ Route::get('/login', 'Auth\LoginController@redirectToProvider')->name('login');
 Route::get('loginfacebook', 'Auth\LoginController@redirectToProvider');
 Route::get('fbcallback', 'Auth\LoginController@handleProviderCallback');
 
-Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/splash', 'AppSplashController@index')->name('splash');
 
 //Apps
