@@ -3,7 +3,30 @@
 @section('content')
     <div class="row">
         <div class="col-md-12">
-            <div class="fbapp">
+            <div id="cloader" class="vertical-align app-panel">
+                <div class="horizontal-align text-center">
+
+                    <div class="loader">
+                        <svg>
+                            <defs>
+                                <filter id="goo">
+                                    <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
+                                    <feColorMatrix in="blur" mode="matrix"
+                                                   values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 5 -2"
+                                                   result="gooey"/>
+                                    <feComposite in="SourceGraphic" in2="gooey" operator="atop"/>
+                                </filter>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div style="margin-top: 120px">
+                        <h5>Analyzing your profile</h5>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="content" class="fbapp" style="display: none">
                 <div style="height: 100%;position: relative;">
                     <div class="imgcontainer"
                          style="">
@@ -31,58 +54,71 @@
                 </div>
             </div>
         </div>
-    </div>
-@section('facebook_meta')
-    <meta property="og:url" content="{{env('APP_URL') . '?fbid=' . $app->id}}">
-    <meta property="og:image" content="{{ json_decode( '{' . $appData .'}',true)['arr'][$safeResultId]['image']  }}">
-    <meta property="og:description" content="{{ json_decode( '{' . $appData .'}',true)['arr'][$safeResultId]['desc']  }}">
-    <meta property="og:title" content="{{ json_decode( '{' . $appData .'}',true)['arr'][$safeResultId]['title']  }}">
-    <meta property="og:type" content="product">
-@endsection
-<script>
 
-    var data ={{!! ($appData) !!}};
-    data = data.arr;
-    var selectedInd = 0;
-    var retry =
-    {{$retry}}
+        @section('facebook_meta')
+            <meta property="og:url" content="{{env('APP_URL') . '?fbid=' . $app->id}}">
+            <meta property="og:image"
+                  content="{{ json_decode( '{' . $appData .'}',true)['arr'][$safeResultId]['image']  }}">
+            <meta property="og:description"
+                  content="{{ json_decode( '{' . $appData .'}',true)['arr'][$safeResultId]['desc']  }}">
+            <meta property="og:title"
+                  content="{{ json_decode( '{' . $appData .'}',true)['arr'][$safeResultId]['title']  }}">
+            <meta property="og:type" content="product">
+        @endsection
+        <script>
 
-    if (!retry) {
-        $('#retry').hide();
-    }
+            var data ={{!! ($appData) !!}};
+            data = data.arr;
+            var selectedInd = 0;
+            var retry =
+            {{$retry}}
 
-    function shuffle() {
-        var ind = Math.floor(Math.random() * data.length);
-        setUi(ind);
-        selectedInd = ind;
-    }
+            if (!retry) {
+                $('#retry').hide();
+            }
 
-    function setUi(ind) {
-        var item = data[ind];
-        $('#title').text(item.title);
-        $('#desc').text(item.desc);
-        $('.imgcontainer').css('background-image', 'url(' + item.image + ')');
-    }
+            function shuffle() {
+                var ind = Math.floor(Math.random() * data.length);
+                setUi(ind);
+                selectedInd = ind;
+            }
 
-    function onShareClick() {
-        FB.ui({
-            method: 'share',
-            display: 'popup',
-            href: '{{env('APP_URL')}}' + '/fbapp?result=' + selectedInd + '&fbid=' + userid + '&fbid=' + {{$app->id}},
-        }, function (response) {
-        });
-    }
+            function setUi(ind) {
+                var item = data[ind];
+                $('#title').text(item.title);
+                $('#desc').text(item.desc);
+                $('.imgcontainer').css('background-image', 'url(' + item.image + ')');
+            }
 
-    var userid =
-            {{Auth::user()->fbid}}
-    var urlId = '{{$resultId}}';
-    var urlId = parseInt(urlId);
-    if (urlId == -1) {
-        shuffle()
-        setUi(selectedInd);
-    } else {
-        setUi(urlId);
-        selectedInd = urlId;
-    }
-</script>
+            function onShareClick() {
+                FB.ui({
+                    method: 'share',
+                    display: 'popup',
+                    href: '{{env('APP_URL')}}' + '/fbapp?result=' + selectedInd + '&fbid=' + userid + '&fbid=' + {{$app->id}},
+                }, function (response) {
+                });
+            }
+
+            var userid =
+                    {{Auth::user()->fbid}}
+            var urlId = '{{$resultId}}';
+            var urlId = parseInt(urlId);
+            if (urlId == -1) {
+                shuffle()
+                setUi(selectedInd);
+            } else {
+                setUi(urlId);
+                selectedInd = urlId;
+            }
+        </script>
+
+        <script>
+            window.addEventListener('load',
+                function () {
+                    setTimeout(function () {
+                        $('#content').show();
+                        $('#cloader').hide();
+                    }, 3000);
+                }, false);
+        </script>
 @endsection
