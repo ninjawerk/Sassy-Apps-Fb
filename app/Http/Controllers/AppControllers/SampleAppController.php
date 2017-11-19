@@ -39,11 +39,13 @@ class SampleAppController extends Controller
             if (Input::has('fbid')) {
                 if (Auth::user()->fbid == Input::get('fbid')) {
                     $resultId = Input::get('result', -1);
-                    return view('fbapp', compact('resultId', 'appData', 'retry', 'app'));
+                    $safeResultId = Input::get('result', 0);
+                    return view('fbapp', compact('resultId', 'appData', 'retry', 'app','safeResultId'));
                 }
             }
             $resultId = -1;
-            return view('appcontainer', compact('resultId', 'appData', 'retry', 'app'));
+            $safeResultId = Input::get('result', 0);
+            return view('appcontainer', compact('resultId', 'appData', 'retry', 'app','safeResultId'));
         }
         abort('404');
 
