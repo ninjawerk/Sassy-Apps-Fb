@@ -1,0 +1,51 @@
+<?php
+
+namespace App\Http\Controllers\AppControllers;
+
+use App\FbApp;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Input;
+
+class SampleAppController extends Controller
+{
+    protected $id = 1;
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index(Request $request)
+    {
+
+        if (Input::has('appid')) {
+            $id = Input::get('appid');
+            $app = FbApp::find($id);
+            $appData = $app->data;
+            $retry = $app->retry;
+
+            if (Input::has('fbid')) {
+                if (Auth::user()->fbid == Input::get('fbid')) {
+                    $resultId = Input::get('result', -1);
+                    return view('fbapp', compact('resultId', 'appData', 'retry', 'app'));
+                }
+            }
+            $resultId = -1;
+            return view('appcontainer', compact('resultId', 'appData', 'retry', 'app'));
+        }
+        abort('404');
+
+    }
+}
