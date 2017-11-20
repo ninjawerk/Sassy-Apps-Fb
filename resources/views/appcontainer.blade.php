@@ -30,12 +30,6 @@
                 <div style="height: 100%;position: relative;">
                     <div class="imgcontainer"
                          style="">
-                        <div style="position: absolute; bottom: 15px;width: 100%;text-align: center;">
-                            <a id="retry" class="btn btn-round btn-primary" style="margin-top: 20px"
-                               onclick="shuffle()">
-                                Retry
-                            </a>
-                        </div>
                     </div>
                     <div id="img"
                          style="width: 100%;height: 30%;    color: white; background: #212121; position: absolute; bottom: 0"
@@ -48,6 +42,12 @@
                                     <div class="fb-icon-bg"></div>
                                     <div class="fb-bg"></div>
                                 </a>
+                                <div style=" width: 100%;text-align: center;">
+                                    <a id="retry" class="btn btn-round btn-primary" style="margin-top: 20px"
+                                       onclick="shuffle()">
+                                        Retry
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
