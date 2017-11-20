@@ -45,7 +45,7 @@
                                 <div style=" width: 100%;text-align: center;">
                                     <a id="retry" class="btn btn-round btn-primary" style="margin-top: 20px"
                                        onclick="shuffle()">
-                                        Retry
+                                        Try Again!
                                     </a>
                                 </div>
                             </div>
