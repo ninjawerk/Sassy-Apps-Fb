@@ -62,7 +62,7 @@
             <meta property="og:description"
                   content="{{  $app->og_description  }}">
             <meta property="og:title"
-                  content="{{ '' + $app->og_title_prefix +  json_decode( '{' . $appData .'}',true)['arr'][$safeResultId]['title']  }}">
+                  content="{{ $app->og_title_prefix .  json_decode( '{' . $appData .'}',true)['arr'][$safeResultId]['title']  }}">
             <meta property="og:type" content="product">
         @endsection
 
