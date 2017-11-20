@@ -65,6 +65,7 @@
                   content="{{ json_decode( '{' . $appData .'}',true)['arr'][$safeResultId]['title']  }}">
             <meta property="og:type" content="product">
         @endsection
+
         <script>
 
             var data ={{!! ($appData) !!}};

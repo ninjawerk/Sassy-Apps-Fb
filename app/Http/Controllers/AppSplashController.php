@@ -31,6 +31,5 @@ class AppSplashController extends Controller
             return view('splash',compact('app'));
         }
         return view('home');
-
     }
 }
