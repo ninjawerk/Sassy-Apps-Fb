@@ -6,9 +6,9 @@
         <meta property="og:image"
               content="{{ json_decode( '{' . $appData .'}',true)['arr'][$safeResultId]['image']  }}">
         <meta property="og:description"
-              content="{{ json_decode( '{' . $appData .'}',true)['arr'][$safeResultId]['desc']  }}">
+              content="{{  $app->og_description  }}">
         <meta property="og:title"
-              content="{{ json_decode( '{' . $appData .'}',true)['arr'][$safeResultId]['title']  }}">
+              content="{{ $app->og_title_prefix +  json_decode( '{' . $appData .'}',true)['arr'][$safeResultId]['title']  }}">
         <meta property="og:type" content="product">
     @endisset
 @endsection
