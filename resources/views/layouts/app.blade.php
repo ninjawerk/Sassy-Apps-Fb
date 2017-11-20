@@ -47,8 +47,8 @@
                 <div class="row ">
                     @foreach ($latestApps as $app)
                         <div class="col-md-3 col-lg-offset-1 col-sm-5 col-xs-12  horizontal-align">
-                            <div class="horizontal-align text-center appblock">
-                                <img width="80" height="80" src="{{$app->icon_url}}">
+                            <div class="horizontal-align text-center appblock-tile">
+                                <img width="100%" height="200px" src="{{$app->icon_url}}">
                                 <h2>{{$app->name}}</h2>
                                 <h5>{{$app->description}}</h5>
                                 <a class="btn btn-round btn-primary" style="margin-top: 20px"

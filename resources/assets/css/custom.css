@@ -99,6 +99,15 @@
     border-radius: 5px;
 
 }
+.appblock-tile{
+    height: auto;
+    padding: 0 0 30px 0;
+    background: #3a3a3a;
+    color: white;
+    margin: 20px 0px 10px 0px;
+    border-radius: 5px;
+
+}
 
 
 @-webkit-keyframes loader-spin {
