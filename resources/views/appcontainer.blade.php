@@ -94,7 +94,7 @@
                 FB.ui({
                     method: 'share',
                     display: 'popup',
-                    href: '{{env('APP_URL')}}' + '/fbapp?result=' + selectedInd + '&fbid=' + userid + '&appid=' + '{{$app->id}}',
+                    href: '{{env('APP_URL')}}' + '/fbappresult?result=' + selectedInd + '&fbid=' + userid + '&appid=' + '{{$app->id}}',
                 }, function (response) {
                 });
             }

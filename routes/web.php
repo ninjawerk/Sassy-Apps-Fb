@@ -20,3 +20,4 @@ Route::get('/splash', 'AppSplashController@index')->name('splash');
 
 //Apps
 Route::get('/fbapp', 'AppControllers\SampleAppController@index');
+Route::get('/fbappresult', 'AppControllers\SampleAppResultController@index');
