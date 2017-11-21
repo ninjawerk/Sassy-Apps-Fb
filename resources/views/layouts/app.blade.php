@@ -7,7 +7,7 @@
     @yield('facebook_meta')
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+    <link rel="icon" href="/img/sassy.png">
     <title>{{ config('app.name', 'Sassy Apps') }}</title>
 
     <!-- Styles -->
@@ -58,7 +58,6 @@
                             </div>
                         </div>
                     @endforeach
-
                 </div>
             </div>
         </div>

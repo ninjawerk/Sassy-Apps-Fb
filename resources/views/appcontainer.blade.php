@@ -32,7 +32,7 @@
                          style="">
                     </div>
                     <div id="img"
-                         style="width: 100%;height: 30%;    color: white; background: #212121; position: absolute; bottom: 0"
+                         style="width: 100%;     color: white; background: #212121; position: absolute; bottom: 0;     padding: 30px 0 30px 0;"
                          class=" text-center vertical-align">
                         <div style="width: 100%">
                             <h2 style="margin-top: 0" id="title"></h2>
