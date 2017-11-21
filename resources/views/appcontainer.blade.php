@@ -56,7 +56,6 @@
         </div>
 
         @section('facebook_meta')
-            <meta property="og:url" content="{{env('APP_URL') . '?fbid=' . $app->id}}">
             <meta property="og:image"
                   content="{{ json_decode( '{' . $appData .'}',true)['arr'][$safeResultId]['image']  }}">
             <meta property="og:description"
