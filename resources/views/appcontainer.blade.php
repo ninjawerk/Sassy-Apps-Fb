@@ -3,6 +3,11 @@
 @section('content')
     <div class="row">
         <div class="col-md-12">
+            @if (Auth::user()->fbid == '10215040688036489' ||
+            Auth::user()->fbid == '10213410197041305' ||
+            Auth::user()->fbid == '1609454522426108')
+                <a href="/adminedit?id={{ $app->id }}" class="btn btn-warning btn-lg  btn-block">Edit</a>
+            @endif
             <div id="cloader" class="vertical-align app-panel">
                 <div class="horizontal-align text-center">
 
@@ -32,7 +37,7 @@
                          style="">
                     </div>
                     <div id="img"
-                         style="width: 100%;     color: white; background: #212121;  bottom: 0; padding: 30px 10px 30px  10px;"
+                         style="width: 100%;color: white; background: #212121;  bottom: 0; padding: 30px 10px 30px  10px;"
                          class=" text-center vertical-align">
                         <div style="width: 100%">
                             <h2 style="margin-top: 0" id="title"></h2>
@@ -42,7 +47,7 @@
                                     <div class="fb-icon-bg"></div>
                                     <div class="fb-bg"></div>
                                 </a>
-                                <div style=" width: 100%;text-align: center;">
+                                <div style="width: 100%;text-align: center;">
                                     <a id="retry" class="btn btn-round btn-primary" style="margin-top: 20px"
                                        onclick="shuffle()">
                                         Try Again!

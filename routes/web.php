@@ -22,3 +22,10 @@ Route::get('/splash', 'AppSplashController@index')->name('splash');
 //Apps
 Route::get('/fbapp', 'AppControllers\SampleAppController@index');
 Route::get('/fbappresult', 'AppControllers\SampleAppResultController@index');
+
+
+Route::get('/admin', 'AdminController@index');
+Route::post('/adminsave', 'AdminController@save');
+
+Route::get('/adminedit', 'AdminController@editIndex');
+Route::post('/editSave', 'AdminController@saveEdit');
