@@ -48,7 +48,7 @@
     </div>
 </nav>
 <div id="app ">
-    <div class="container">
+    <div class="container" style="margin-bottom: 100px;">
         <div class="row">
             <div class="col-md-12">
                 @yield('content')
