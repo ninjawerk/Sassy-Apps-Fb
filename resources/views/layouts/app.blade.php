@@ -77,5 +77,8 @@
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
 
+<script type='text/javascript' src='//p252374.clksite.com/adServe/banners?tid=252374_493277_0&type=floating_banner&size=130x130'></script>
+<script data-cfasync='false' type='text/javascript' src='//p252374.clksite.com/adServe/banners?tid=252374_493277_1&type=footer&size=728x90'></script>
+
 </body>
 </html>
