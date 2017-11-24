@@ -42,7 +42,7 @@
 <nav class="navbar navbar-default" style="background-color: #616161;">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" style="color: #fff;" href="#">Sassy Apps</a>
+            <a class="navbar-brand" style="color: #fff;" href="/">Sassy Apps</a>
         </div>
 
     </div>
