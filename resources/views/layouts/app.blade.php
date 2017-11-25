@@ -7,6 +7,7 @@
     @yield('facebook_meta')
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="propeller" content="4daae8057b8882da2035b0ea968c8c29" />
     <link rel="icon" href="/img/sassy.png">
     <title>{{ config('app.name', 'Sassy Apps') }}</title>
 
