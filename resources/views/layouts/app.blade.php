@@ -118,5 +118,7 @@
 </script>
 <script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
 
+<script type="text/javascript" src="//ylx-4.com/tun.php?section=General&pt=8&pub=273377&ga=g&fN=1&fT=1&fTT=0"></script>
+
 </body>
 </html>
