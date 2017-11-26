@@ -118,11 +118,5 @@
 </script>
 <script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
 
-<script type="text/javascript">
-    var uid = '182925';
-    var wid = '392751';
-</script>
-<script type="text/javascript" src="//cdn.popcash.net/pop.js"></script>
-
 </body>
 </html>
