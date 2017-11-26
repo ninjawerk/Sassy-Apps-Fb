@@ -7,6 +7,7 @@
     @yield('facebook_meta')
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="propeller" content="4daae8057b8882da2035b0ea968c8c29" />
     <link rel="icon" href="/img/sassy.png">
     <title>{{ config('app.name', 'Sassy Apps') }}</title>
 
@@ -42,7 +43,7 @@
 <nav class="navbar navbar-default" style="background-color: #616161;">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" style="color: #fff;" href="#">Sassy Apps</a>
+            <a class="navbar-brand" style="color: #fff;" href="/">Sassy Apps</a>
         </div>
 
     </div>
