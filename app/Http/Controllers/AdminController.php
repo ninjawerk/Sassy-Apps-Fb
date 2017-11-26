@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\FbApp;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
@@ -31,7 +32,8 @@ class AdminController extends Controller
             Auth::user()->fbid == '1609454522426108'
         ) {
 
-            return view('admin');
+            $userCount = User::all()->count();
+            return view('admin', compact('userCount'));
         }
 
         abort('404');

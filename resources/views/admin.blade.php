@@ -3,7 +3,9 @@
 @section('content')
 
     <div class="row" style="margin-bottom: 100px">
-
+        <div class="row">
+            <h4>User Count: {{$userCount}}</h4>
+        </div>
         <form method="post" action="/adminsave">
             {{ csrf_field() }}
             <h3 style="margin-top: 40px">App Info</h3>
